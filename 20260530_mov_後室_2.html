@@ -47,6 +47,34 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.02);
         }
 
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            max-width: 60%;
+        }
+
+        .home-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: bold;
+            padding: 6px 12px;
+            border-radius: 16px;
+            background: #f1ede4;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .home-btn:hover {
+            background-color: white;
+            color: var(--text-color);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+        }
+
         .nav-title {
             font-size: 0.95rem;
             font-weight: bold;
@@ -54,7 +82,6 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            max-width: 60%;
         }
 
         .lang-switcher {
@@ -336,15 +363,25 @@
             .subtitle { font-size: 1.05rem; }
             .control-bar { padding: 10px; }
             .lang-btn { padding: 4px 10px; font-size: 0.75rem; }
+            .home-btn { padding: 4px 8px; font-size: 0.75rem; }
+            .nav-left { gap: 8px; }
             body { padding-bottom: 60px; }
         }
     </style>
 </head>
 <body class="mode-bilingual">
 
-    <!-- Sticky Navigation Control Bar -->
     <div class="control-bar">
-        <div class="nav-title" id="navTitle">空間拓樸、差異生成與網際非場所</div>
+        <div class="nav-left">
+            <a href="index.html" class="home-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                首頁
+            </a>
+            <div class="nav-title" id="navTitle">空間拓樸、差異生成與網際非場所</div>
+        </div>
         <div class="lang-switcher">
             <button class="lang-btn" onclick="setMode('zh')">中文</button>
             <button class="lang-btn" onclick="setMode('en')">English</button>
@@ -353,13 +390,11 @@
     </div>
 
     <div class="container">
-        <!-- Header Section -->
         <header>
             <h1 class="main-title">空間拓樸、差異生成與網際非場所：從《後室》看當代空間感知與認知結構之重構</h1>
             <div class="subtitle">Spatial Topology, Differential Generation, and Cyber Non-places: Reconstructing Contemporary Spatial Perception and Cognitive Structures through The Backrooms</div>
         </header>
 
-        <!-- Abstract Box -->
         <div class="abstract-section">
             <div class="abstract-title zh">摘要</div>
             <div class="abstract-text zh">
@@ -372,7 +407,6 @@
             </div>
         </div>
 
-        <!-- Section 1 -->
         <section id="section1">
             <h2>
                 <span class="zh-title">一、 認識論與媒介批判的交會：從認知基模到重複機制的退化</span>
@@ -388,7 +422,6 @@
             </div>
         </section>
 
-        <!-- Section 2 -->
         <section id="section2">
             <h2>
                 <span class="zh-title">二、 基於 Deleuze 視角再詮釋：空間的重複與生成</span>
@@ -474,7 +507,6 @@
             </div>
         </section>
 
-        <!-- Document Image Section -->
         <div class="image-container">
             <img src="https://pimg.1px.tw/blog/h9230669/post/901149060103676693/901207575052692908.png" alt="Architecture conceptual diagrams">
             
@@ -491,7 +523,6 @@
             </div>
         </div>
 
-        <!-- Section 3 -->
         <section id="section3">
             <h2>
                 <span class="zh-title">三、 建築史脈絡中的差異建構：從現代主義到參數化運算</span>
@@ -529,7 +560,6 @@
             </div>
         </section>
 
-        <!-- Section 4 -->
         <section id="section4">
             <h2>
                 <span class="zh-title">四、 場所精神的失效：機能操弄與「被後室吞沒的當代城市」</span>
@@ -568,7 +598,6 @@
             </div>
         </section>
 
-        <!-- Section 5 -->
         <section id="section5">
             <h2>
                 <span class="zh-title">五、 穿模的拓樸學與再疆域化：從空間失根到身體實踐的差異重塑</span>
@@ -577,7 +606,7 @@
             <div class="zh-content">
                 <p>然而，讓我們暫時懸置這種末世般的悲觀論調；這種絕對的失根與焦慮。《後室》不只是一則虛擬的網路怪談，它同時是網際空間的集體潛意識向現實世界發出的存在主義式宣告：在由參數、演算法與去地方化構成的當代世界中，我們確實早已失去了認知環境既有座標的能力。但從另一個維度來看，當我們跟隨《後室》的視角，體驗那種跌出地圖邊界、突破物理運算限制的「穿模快感」時，我們實際上正在經歷一場徹底的剝離：剝離了傳統「場所精神」強加於我們的歷史意義、文化符碼與地理的固著包袱。</p>
                 <p>或許這並非是一件壞事：當空間不再提供現成的意義，當世界不再告訴我們「這裡應該是什麼」時，我們才得以直面身體與空間之間那種強烈且難以名狀的「不對勁(uncanniness)」。這種不對勁的感受，不應只被視為心理恐怖的來源，更應被視為一種具生產性的抵抗。</p>
-                <p>我們必須固執地停留在這個錯位的縫隙中進行反思：正是因為外部空間的「容器」已經失效，我們才被迫收回對外在座標的依賴，真正回到「身體」本身；一種 Deleuze 從「去疆域化(de-territorialization)」走向「再疆域化(re-territorialization)」的主體實踐過程 <sup><a id="ref11" href="#fn11">11</a></sup> (Deleuze & Guattari, 1987)。</p>
+                <p>我們必須固執地停留在這個錯位的縫隙中進行反思：正是因為外部空間的「容器」已經失效，我們才被迫收回對外寫標的依賴，真正回到「身體」本身；一種 Deleuze 從「去疆域化(de-territorialization)」走向「再疆域化(re-territorialization)」的主體實踐過程 <sup><a id="ref11" href="#fn11">11</a></sup> (Deleuze & Guattari, 1987)。</p>
                 <p>在沒有座標的《後室》或網際非場所中，唯有透過自己的肉身去觸碰、去迷失、去丈量，主體才能在毫無意義的幾何荒漠中，重新建立一套專屬於自己的「體現認知(embodied cognition)」。最終，《後室》的隱喻不再只是關於迷失，而是關於重塑。當我們不再被固定的場所意義所綁架，我們便能以一種游牧的姿態，用自己的身體去重新理解世界，並在這個被演算法與均質化吞噬的當代空間中，生長出、並創造出我們自己的差異性視角。</p>
             </div>
             <div class="en-content">
@@ -588,7 +617,6 @@
             </div>
         </section>
 
-        <!-- References -->
         <div class="references-section">
             <h3 class="references-title">參考文獻 / References</h3>
             <ol>

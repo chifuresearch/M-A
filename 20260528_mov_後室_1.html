@@ -26,10 +26,15 @@
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
-            font-family: var(--font-zh);
+            font-family: var(--font-en), var(--font-zh);
             line-height: 1.8;
             padding: 0 0 100px 0;
             transition: all 0.3s ease;
+        }
+
+        h1, h2, h3 { 
+            font-family: var(--font-en), var(--font-zh); 
+            font-weight: 700;
         }
 
         /* Top Control Bar */
@@ -47,6 +52,34 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.02);
         }
 
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            max-width: 60%;
+        }
+
+        .home-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: bold;
+            padding: 6px 12px;
+            border-radius: 16px;
+            background: #f1ede4;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .home-btn:hover {
+            background-color: white;
+            color: var(--text-color);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+        }
+
         .nav-title {
             font-size: 0.95rem;
             font-weight: bold;
@@ -54,7 +87,6 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            max-width: 60%;
         }
 
         .lang-switcher {
@@ -300,15 +332,25 @@
             .subtitle { font-size: 1.05rem; }
             .control-bar { padding: 10px; }
             .lang-btn { padding: 4px 10px; font-size: 0.75rem; }
+            .home-btn { padding: 4px 8px; font-size: 0.75rem; }
+            .nav-left { gap: 8px; }
             body { padding-bottom: 60px; }
         }
     </style>
 </head>
 <body class="mode-bilingual">
 
-    <!-- Sticky Navigation Control Bar -->
     <div class="control-bar">
-        <div class="nav-title" id="navTitle">從均質網格到心理拓樸：《後室》</div>
+        <div class="nav-left">
+            <a href="index.html" class="home-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                首頁
+            </a>
+            <div class="nav-title" id="navTitle">從均質網格到心理拓樸：《後室》</div>
+        </div>
         <div class="lang-switcher">
             <button class="lang-btn" onclick="setMode('zh')">中文</button>
             <button class="lang-btn" onclick="setMode('en')">English</button>
@@ -317,13 +359,11 @@
     </div>
 
     <div class="container">
-        <!-- Header Section -->
         <header>
             <h1 class="main-title">從均質網格到心理拓樸：《後室》的空間生產、影像機制與棲居危機</h1>
             <div class="subtitle">From Homogeneous Grid to Psychological Topology: Spatial Production, Visual Mechanism, and the Crisis of Dwelling in The Backrooms</div>
         </header>
 
-        <!-- Abstract Box -->
         <div class="abstract-section">
             <div class="abstract-title zh">摘要</div>
             <div class="abstract-text zh">
@@ -336,14 +376,12 @@
             </div>
         </div>
 
-        <!-- Document Image -->
         <div class="image-container">
             <img src="https://pimg.1px.tw/blog/h9230669/post/900381126901113679/900394536401381542.png" alt="The Backrooms original image">
             <div class="caption caption-zh">2019 年 最初發布在 4chan 上的照片，拍攝的是一間裝修中的 HobbyTown 內部空間，出處：Wiki 後室 詞條。</div>
             <div class="caption caption-en">Note: The original photograph of The Backrooms posted on 4chan in 2019 was actually taken inside a HobbyTown undergoing renovation (Source: Wikipedia entry for "The Backrooms").</div>
         </div>
 
-        <!-- Section 1 -->
         <section id="section1">
             <h2>
                 <span class="zh-title">一、現代主義廢墟與閾限空間</span>
@@ -360,7 +398,6 @@
             </div>
         </section>
 
-        <!-- Section 2 -->
         <section id="section2">
             <h2>
                 <span class="zh-title">二、從均質網格到拓樸空間</span>
@@ -377,7 +414,6 @@
             </div>
         </section>
 
-        <!-- Section 3 -->
         <section id="section3">
             <h2>
                 <span class="zh-title">三、鏡頭語法與拓樸運算</span>
@@ -392,7 +428,6 @@
             </div>
         </section>
 
-        <!-- Section 4 -->
         <section id="section4">
             <h2>
                 <span class="zh-title">四、家的異化與記憶錨定</span>
@@ -411,7 +446,6 @@
             </div>
         </section>
 
-        <!-- Section 5 -->
         <section id="section5">
             <h2>
                 <span class="zh-title">五、作為控制媒材的空間語法</span>
@@ -422,56 +456,4 @@
                 <p>在此條件下，空間不僅作為敘事場景存在，更成為一種被操作的「媒材(medium)」。它被編織進影像與敘事之中，作為一種可塑的拓樸介面：持續讀取角色的記憶結構，放大創傷經驗，並透過幾何變形與連通性重組加以回應。空間因此由承載意義的容器，轉化為主動生成經驗的機制。因此，《後室》的恐怖不再源於對未知的恐懼，而是來自一種更根本的斷裂：主體逐漸意識到自身與環境之間原本穩定的慣習關係已然瓦解。當空間不再回應身體操作，不再支持情感投射，亦不再提供記憶的穩定錨點時，人便失去在世界中定位自身的能力。</p>
             </div>
             <div class="en-content">
-                <p>From the 2022 YouTube series to the 2026 film version, the spatial logic demonstrated in <em>The Backrooms</em> can be understood as a shift from a "disciplinary space" to a "space of control." Early geometric structures characterized by homogeneous repetition generated terror through spatial disorientation and the erasure of difference; in the film version, however, the mechanism of terror shifts to an internalized operation—space is no longer a passive container but a dynamic system capable of sensing, responding to, and reorganizing subjective experience.</p>
-                <p>Under these conditions, space exists not only as a narrative setting but becomes an operative medium. It is woven into the image and narrative as a malleable topological interface: continuously reading the characters' memory structures, amplifying traumatic experiences, and responding through geometric deformation and topological reorganization. Space thus transforms from a container carrying meaning into a mechanism actively generating experience. Therefore, the horror of <em>The Backrooms</em> stems not from the fear of the unknown, but from a more fundamental rupture: the subject gradually realizes that the once-stable habitual relationship between self and environment has disintegrated. When space no longer responds to bodily operation, no longer supports emotional projection, and no longer provides a stable anchor for memory, human beings lose the capacity to orient themselves in the world.</p>
-            </div>
-        </section>
-
-        <!-- References -->
-        <div class="references-section">
-            <h3 class="references-title">參考文獻 / References</h3>
-            <ol>
-                <li id="fn1">Augé, M. (1995). <em>Non-places: Introduction to an anthropology of supermodernity</em>. London, UK: Verso. <a href="#ref1" class="backref">↑</a></li>
-                <li id="fn2">Bachelard, G. (1994). <em>The poetics of space</em>. Boston, MA: Beacon Press. <a href="#ref2" class="backref">↑</a></li>
-                <li id="fn3">Freud, S. (1919/2001). <em>The uncanny</em> (J. Strachey, Trans.) In <em>The standard edition of the complete psychological works of Sigmund Freud</em> (Vol. XVII, pp. 217–256). London, UK: Vintage. <a href="#ref3" class="backref">↑</a></li>
-                <li id="fn4">Heidegger, M. (1927/1962). <em>Being and time</em> (J. Macquarrie & E. Robinson, Trans.) New York, NY: Harper & Row. <a href="#ref4" class="backref">↑</a></li>
-                <li id="fn5">Heidegger, M. (1951/1971). <em>Building dwelling thinking</em> (A. Hofstadter, Trans.). In <em>Poetry, language, thought</em> (pp. 141–161). New York, NY: Harper & Row. <a href="#ref5" class="backref">↑</a></li>
-            </ol>
-        </div>
-    </div>
-
-    <script>
-        function setMode(mode) {
-            // Remove active class from all buttons
-            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-            
-            // Add active class to clicked button
-            const eventTarget = event ? event.target : null;
-            if (eventTarget) {
-                eventTarget.classList.add('active');
-            } else {
-                // fallback detection
-                document.querySelectorAll('.lang-btn').forEach(btn => {
-                    if(btn.getAttribute('onclick').includes(mode)) btn.classList.add('active');
-                });
-            }
-
-            // Reset body classes
-            document.body.classList.remove('mode-zh', 'mode-en', 'mode-bilingual');
-            
-            // Apply new mode
-            document.body.classList.add('mode-' + mode);
-            
-            // Dynamic Header Adjustments
-            const navTitle = document.getElementById('navTitle');
-            if (mode === 'zh') {
-                navTitle.textContent = "從均質網格到心理拓樸：《後室》";
-            } else if (mode === 'en') {
-                navTitle.textContent = "From Homogeneous Grid to Psychological Topology";
-            } else {
-                navTitle.textContent = "從均質網格到心理拓樸：《後室》";
-            }
-        }
-    </script>
-</body>
-</html>
+                <p>From the 2022 YouTube series to the 2026 film version, the spatial logic demonstrated in <em>The Backrooms</em> can be understood as a shift from a "disciplinary space" to a "space of control." Early geometric structures characterized by homogeneous repetition generated terror through spatial disorientation and the erasure of difference; in the film version, however, the mechanism of

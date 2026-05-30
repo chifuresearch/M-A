@@ -26,10 +26,15 @@
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
-            font-family: var(--font-zh);
+            font-family: var(--font-en), var(--font-zh);
             line-height: 1.8;
             padding: 0 0 100px 0;
             transition: all 0.3s ease;
+        }
+
+        h1, h2, h3 { 
+            font-family: var(--font-en), var(--font-zh); 
+            font-weight: 700;
         }
 
         /* Top Control Bar */
@@ -47,6 +52,34 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.02);
         }
 
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            max-width: 60%;
+        }
+
+        .home-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: bold;
+            padding: 6px 12px;
+            border-radius: 16px;
+            background: #f1ede4;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .home-btn:hover {
+            background-color: white;
+            color: var(--text-color);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+        }
+
         .nav-title {
             font-size: 0.95rem;
             font-weight: bold;
@@ -54,7 +87,6 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            max-width: 60%;
         }
 
         .lang-switcher {
@@ -310,15 +342,25 @@
             .subtitle { font-size: 1.05rem; }
             .control-bar { padding: 10px; }
             .lang-btn { padding: 4px 10px; font-size: 0.75rem; }
+            .home-btn { padding: 4px 8px; font-size: 0.75rem; }
+            .nav-left { gap: 8px; }
             body { padding-bottom: 60px; }
         }
     </style>
 </head>
 <body class="mode-bilingual">
 
-    <!-- Sticky Navigation Control Bar -->
     <div class="control-bar">
-        <div class="nav-title" id="navTitle">《穿著Prada的惡魔2》與時尚靈光的消亡史</div>
+        <div class="nav-left">
+            <a href="index.html" class="home-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                首頁
+            </a>
+            <div class="nav-title" id="navTitle">《穿著Prada的惡魔2》與時尚靈光的消亡史</div>
+        </div>
         <div class="lang-switcher">
             <button class="lang-btn" onclick="setMode('zh')">中文</button>
             <button class="lang-btn" onclick="setMode('en')">English</button>
@@ -327,13 +369,11 @@
     </div>
 
     <div class="container">
-        <!-- Header Section -->
         <header>
             <h1 class="main-title">《穿著Prada的惡魔2》與時尚靈光的消亡史：從班雅明「拱廊街計畫」到機械時代的審美鄉愁</h1>
             <div class="subtitle">The Devil Wears Prada 2 and the Demise of Fashion’s Aura: From Benjamin’s Arcades Project to the Aesthetic Nostalgia in the Age of Mechanical Reproduction</div>
         </header>
 
-        <!-- Abstract Box -->
         <div class="abstract-section">
             <div class="abstract-title zh">摘要</div>
             <div class="abstract-text zh">
@@ -346,14 +386,12 @@
             </div>
         </div>
 
-        <!-- Document Image -->
         <div class="image-container">
             <img src="https://pimg.1px.tw/blog/h9230669/album/114997509/897860439921691076.png" alt="米蘭大教堂旁的艾曼紐二世迴廊">
             <div class="caption caption-zh">米蘭大教堂旁的艾曼紐二世迴廊，出處：Wiki 埃馬努埃萊二世拱廊街 詞條。</div>
             <div class="caption caption-en">Galleria Vittorio Emanuele II next to the Milan Cathedral. (Source: Wikipedia, "Galleria Vittorio Emanuele II")</div>
         </div>
 
-        <!-- Section 1 -->
         <section id="section1">
             <h2>
                 <span class="zh-title">一、 空蕩的拱廊街：階級幻夢的破滅與世代標籤化</span>
@@ -371,7 +409,6 @@
             </div>
         </section>
 
-        <!-- Section 2 -->
         <section id="section2">
             <h2>
                 <span class="zh-title">二、 空白與失語：網紅的缺席與敘事扁平化的雙重諷刺</span>
@@ -401,7 +438,6 @@
             </div>
         </section>
 
-        <!-- Section 3 -->
         <section id="section3">
             <h2>
                 <span class="zh-title">三、 儀式的抵抗：時裝周的本體論與「修復型鄉愁」</span>
@@ -433,7 +469,6 @@
             </div>
         </section>
 
-        <!-- Section 4 -->
         <section id="section4">
             <h2>
                 <span class="zh-title">結語：數位荒原中的唐吉訶德</span>
@@ -449,7 +484,6 @@
             </div>
         </section>
 
-        <!-- References -->
         <div class="references-section">
             <h3 class="references-title">參考文獻 / References</h3>
             <ol>
